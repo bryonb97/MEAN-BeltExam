@@ -1,0 +1,25 @@
+<h2>Details about {{selectedPet.name}}</h2>
+<table style="border: 5px solid red; margin: 2% 0% 0% 30%; width: 700px;">
+    
+    <tr>
+        <th style="font-size: 25px;">Pet Type:</th>
+        <td style="font-size: 18px;">{{selectedPet.pettype}}</td>
+    </tr>
+    <tr>
+        <th>Description:</th>
+        <td style="font-size: 18px;">{{selectedPet.description}}</td>
+    </tr>
+    <tr>
+        <th>Skills:</th>
+        <td style="font-size: 18px;">{{selectedPet.skill1}}<br>{{selectedPet.skill2}}<br>{{selectedPet.skill3}}</td>
+    </tr>
+    <tr>
+        <th>Like:</th>
+        <td style="font-size: 18px;">{{selectedPet.like_count}}</td>
+    </tr>
+    <tr>
+        <td><button *ngIf="selectedPet.showLike" (click)="onLike(selectedPet)">Like This Pet</button> </td>
+        <td><button (click)="onDelete(selectedPet._id)">Adopt This Pet</button> </td>
+    </tr>
+</table>
+

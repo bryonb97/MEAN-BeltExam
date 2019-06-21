@@ -1,0 +1,16 @@
+<table style="border: 5px solid red; display: block; margin-left: auto; margin-right: auto; margin-top: 2%; width: 500px;text-align: center;">
+  <tr style="border: 2px solid green; font-size:25px; color:rgb(62, 170, 226);">
+    <th style="text-align: center;">Pet Name</th>
+    <th style="text-align: center;">Type</th>
+    <td style="text-align: center;">Likes</td>
+    <th style="text-align: center;">Actions</th> 
+  </tr>
+    <tr *ngFor="let pet of allPets" style="border: 2px solid rgb(62, 170, 226); font-size: 18px; margin-left: 3%;">
+    <td style="font-size: 20px; margin-left: 1%;">{{pet.name}}</td>
+    <td style="font-size: 20px; margin-left: 7%;">{{pet.pettype}}</td>
+    <td style="font-size: 20px; margin-left: 3%;">{{pet.like_count}}</td>
+    <td style="font-size: 20px; margin-left: 3%;"><button [routerLink]="['/pets/edit/', pet._id]">Edit</button> - <button (click)="onDelete(pet._id)">Adopt!</button> - <button [routerLink]="['/pets/', pet._id]">{{pet.name}}'s' Details</button></td> 
+  </tr>
+
+</table>  
+

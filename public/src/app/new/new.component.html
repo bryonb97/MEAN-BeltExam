@@ -1,0 +1,46 @@
+<h2 style="text-align: center; font-size: 30px;">Add a Pet to our Shelter Here!</h2>
+
+<div *ngFor="let err of errors">
+  <p style="color: red;"> {{ err.name.message }}</p>
+  <p style="color: red;"> {{ err.pettype.message }}</p>
+  <p style="color: red;"> {{ err.description.message }}</p>
+</div>
+
+<div>
+  <form (submit)="createPet()" style="font-size: 20px; text-align: center;">
+
+    <table style="border: 5px solid red; display: block; margin-left: auto; margin-right: auto; margin-top: 2%; width: 600px; text-align: center; height: 350px;">
+      <tr style="margin: 2%;">
+        <th>Pet Name:</th>
+        <td><input style="font-size: 18px;" type="text" name="newPet.name" [(ngModel)]="newPet.name" /></td>
+      </tr>
+      <tr>
+        <th>Pet Type:</th>
+        <td><input style="font-size: 18px;" type="text" name="newPet.pettype" [(ngModel)]="newPet.pettype" /></td>
+      </tr>
+      <tr>
+        <th>Description of Your Pet:</th>
+        <td><input style="font-size: 18px;" type="text" name="newPet.description" [(ngModel)]="newPet.description" /></td>
+      </tr>
+      <tr>
+        <th>Add Your Pet's Skills #1 (Optional):</th>
+        <td><input style="font-size: 18px;" type="text" name="newPet.skill1" [(ngModel)]="newPet.skill1" /></td>
+      </tr>
+      <tr>
+        <th>Add Your Pet's Skills #2 (Optional):</th>
+        <td><input style="font-size: 18px;" type="text" name="newPet.skill2" [(ngModel)]="newPet.skill2" /></td>
+      </tr>
+      <tr>
+        <th>Add Your Pet's Skills #3 (Optional):</th>
+        <td><input style="font-size: 18px;" type="text" name="newPet.skill3" [(ngModel)]="newPet.skill3" /></td>
+      </tr>
+
+      <tr>
+        <td><button [routerLink]="['/pets']">Cancel</button> </td>
+        <td><input style="font-size: 25px;" type="submit" value="Add Your Pet to our Shelter" /></td>
+      </tr>
+    </table>
+
+
+  </form>
+</div>

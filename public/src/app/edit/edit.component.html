@@ -1,0 +1,45 @@
+<h2>Edit a Pet</h2>
+
+<div *ngFor="let err of errors">
+  <p style="color: red;"> {{ err.name.message }}</p>
+  <p style="color: red;"> {{ err.pettype.message }}</p>
+  <p style="color: red;"> {{ err.description.message }}</p>
+</div>
+
+<div>
+  <form (submit)="onEdit(selectedPet)" style="font-size: 20px;">
+
+    <table style="border: 5px solid red; margin: 2% 0% 0% 35%; height: 350px; width:700px;">
+      <tr style="margin: 2%;">
+        <th>Pet Name:</th>
+        <td><input style="font-size: 18px;" type="text" name="selectedPet.name" [(ngModel)]="selectedPet.name" /></td>
+      </tr>
+      <tr>
+        <th>Pet Type:</th>
+        <td><input style="font-size: 18px;" type="text" name="selectedPet.pettype" [(ngModel)]="selectedPet.pettype" /></td>
+      </tr>
+      <tr>
+        <th>Description:</th>
+        <td><input style="font-size: 18px;" type="text" name="selectedPet.description" [(ngModel)]="selectedPet.description" /></td>
+      </tr>
+      <tr>
+        <th>Add skills 1:</th>
+        <td><input style="font-size: 18px;" type="text" name="selectedPet.skill1" [(ngModel)]="selectedPet.skill1" /></td>
+      </tr>
+      <tr>
+        <th>Add skills 2:</th>
+        <td><input style="font-size: 18px;" type="text" name="selectedPet.skill2" [(ngModel)]="selectedPet.skill2" /></td>
+      </tr>
+      <tr>
+        <th>Add skills 3:</th>
+        <td><input style="font-size: 18px;" type="text" name="selectedPet.skill3" [(ngModel)]="selectedPet.skill3" /></td>
+      </tr>
+
+      <tr>
+        <td><button [routerLink]="['/pets']">Cancel</button> </td>
+        <td><input style="font-size: 25px;" type="submit" value="Edit {{selectedPet.name}}'s Info'" /></td>
+      </tr>
+    </table>
+
+</form>
+</div>
